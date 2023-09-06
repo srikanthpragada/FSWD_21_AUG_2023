@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <h1  id="clock"></h1>
+    <button onclick="stopClock()">Stop</button>
+
+    <script>
+         var clock = document.getElementById("clock")
+         var id = setInterval(showTime, 5000);
+
+         function showTime() {
+             let cd = new Date()
+             clock.innerHTML = 
+                `${cd.getHours()}:${cd.getMinutes()}:${cd.getSeconds()}`;
+         }
+
+         function stopClock(){
+            clearInterval(id)
+         }
+    </script>
+    
+</body>
+</html>
