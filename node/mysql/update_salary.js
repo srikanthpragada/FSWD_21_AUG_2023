@@ -1,21 +1,16 @@
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "mysql",
-  database: "jun28"
-});
+var con = require("./connection_util")
 
 con.connect(function (err) {
   if (err) throw err;
  
   con.query("update employees set salary = ? where emp_id = ?",
-    [600000, 9],
+    [600000, 8],
     function (err, result) {
       if (err) throw err;
  
-      console.log(result)
+      console.log(result)  // OKPacket
 
       if (result.affectedRows === 1)
         console.log("Update Employee Successfully")

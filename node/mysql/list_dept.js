@@ -1,12 +1,6 @@
 var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "mysql",
-  database: "jun28"
-});
-
+var con = require("./connection_util")
 
 con.connect(function (err) {
   if (err) throw err;
@@ -15,8 +9,8 @@ con.connect(function (err) {
     function (err, departments, fields) {
       if (err) throw err;
 
-      //console.log(fields)
-      //console.log(departments)
+      // console.log(fields)
+      // console.log(departments)
       for (let dept of departments) {
          console.log(`${dept.dept_id} -  ${dept.dept_name}`)
       }
