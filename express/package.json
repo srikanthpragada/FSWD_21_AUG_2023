@@ -1,0 +1,15 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "Express Demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Srikanth Pragada",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
