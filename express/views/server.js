@@ -30,7 +30,8 @@ app.get('/showcourse', (req, res) => {
 })
 
 app.get('/listcourses', (req, res) => {
-    res.render('list_courses', courses)
+    res.render('list_courses',
+         {courses:  courses, trainer : 'Srikanth'})
 })
 
 app.listen(port, () => {

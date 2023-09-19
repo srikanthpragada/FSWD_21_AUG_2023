@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interest Calculation - 2</title>
+</head>
+
+<body>
+  <h1>Interest Calculation - 2</h1>
+  <form method="post">
+    Deposit Amount <br />
+    <input type="number" name="amount" value="<%=amount%>" />
+    <p></p>
+    Interest Rate <br />
+    <input type="number" step="0.01" name="rate" value="<%=rate%>" />
+    <p></p>
+    <button>Calculate</button>
+
+    <h1>
+      <% if(interest) {%>
+        <%= interest %>
+      <% } %>
+    </h1>
+  </form>
+
+</body>
+
+</html>

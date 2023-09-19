@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Courses</title>
+
 </head>
 <body>
     <h1>List Courses</h1>
+    <h2>Trainer : <%=trainer%> </h2>
     <table border="1" cellpadding="5pt">
          <tr>
             <th>Title</th>
             <th>Fee</th>
          </tr>
          <%
+           courses.map( course =>{ %> 
 
+                    <tr>
+                      <td><%=course.title%></td>
+                      <td><%=course.fee%></td>
+                    </tr>
+         <%                    
+                })
          %>
-
     </table>
 </body>
 </html>
