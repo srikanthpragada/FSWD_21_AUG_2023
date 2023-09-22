@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Department</title>
+</head>
+<body>
+    <h1>Edit Department</h1>
+    <form method="post">
+        Department Id <br/>
+        <input type="text" name="deptid" value="<%=dept.dept_id%>" required />
+        <p></p>
+        Department Name <br/>
+        <input type="text" name="deptname" value="<%=dept.dept_name%>"  required />
+        <p></p>
+        <input type="submit" value="Update Dept"/>
+    </form>
+</body>
+</html>
