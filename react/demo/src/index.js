@@ -2,14 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Course from './props/Course';
+import Person from './props/Person';
+import ContactList2 from './props/ContactList2';
+
+const contacts = [ 
+    {name : 'James', email : 'james@gmail.com'},
+    {name : 'Scott', email : 'scott@gmail.com'},
+    {name : 'Larry', email : 'larry@gmail.com'}
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Course title="Python" fee={10000} />
-    <Course title="Java EE" fee={15000} />
-    <Course title="AWS" fee={7500} />
+    <ContactList2 contacts = {contacts} />
   </React.StrictMode>
 );
 
