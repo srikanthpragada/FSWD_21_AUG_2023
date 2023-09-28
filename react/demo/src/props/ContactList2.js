@@ -11,11 +11,11 @@ function Contact(props) {
   )
 }
 
-function ShowContact({contact}) {
+function ShowContact(props) {
   return(
     <>
-      <h3>Name : {contact.name}</h3>
-      <h3>Email : {contact.email}</h3>
+      <h3>Name : {props.contact.name}</h3>
+      <h3>Email : {props.contact.email}</h3>
       <hr/>
     </>
   )

@@ -2,19 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Person from './props/Person';
-import ContactList2 from './props/ContactList2';
+import Counter from './state/Counter';
 
-const contacts = [ 
-    {name : 'James', email : 'james@gmail.com'},
-    {name : 'Scott', email : 'scott@gmail.com'},
-    {name : 'Larry', email : 'larry@gmail.com'}
-]
+// const contacts = [ 
+//     {name : 'James', email : 'james@gmail.com'},
+//     {name : 'Scott', email : 'scott@gmail.com'},
+//     {name : 'Larry', email : 'larry@gmail.com'}
+// ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ContactList2 contacts = {contacts} />
+    <Counter />
   </React.StrictMode>
 );
 
