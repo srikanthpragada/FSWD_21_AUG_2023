@@ -5,13 +5,20 @@ export default function Skills() {
 
     function addSkill() {
         const skill = document.getElementById("txtSkill").value
+        if (skills.includes(skill))
+        {
+            alert("Skill is already present!");
+            return;
+        }
+
         //skills.push(skill)
         setSkills([...skills, skill])
         // setSkills(skills)
     }
 
     function deleteSkill(idxToRemove) {
-        setSkills(skills.filter((v, index) => index !== idxToRemove))
+        if(window.confirm("Do you want to delete skill?"))
+             setSkills(skills.filter((v, index) => index !== idxToRemove))
     }
 
     return (
