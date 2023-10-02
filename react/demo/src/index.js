@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Passengers from './state/Passengers';
+import FunctionDemo from './context/FunctionDemo';
 
 // const contacts = [ 
 //     {name : 'James', email : 'james@gmail.com'},
@@ -13,7 +13,7 @@ import Passengers from './state/Passengers';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Passengers />
+     <FunctionDemo />
   </React.StrictMode>
 );
 
