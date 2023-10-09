@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import GitUserInfo from './ajax/GitUserInfo';
+import ListCountries from './ajax/ListCountries';
 
 // const contacts = [ 
 //     {name : 'James', email : 'james@gmail.com'},
@@ -13,7 +13,7 @@ import GitUserInfo from './ajax/GitUserInfo';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <GitUserInfo />
+     <ListCountries />
   </React.StrictMode>
 );
 
