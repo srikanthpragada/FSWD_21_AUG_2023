@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
-import { SERVER_URL } from './constants'
+import { AUTHOR_URL } from './constants'
 import { Link } from "react-router-dom";
 
 export default function ListAuthors() {
@@ -9,7 +9,7 @@ export default function ListAuthors() {
     useEffect(() => getAuthors(), [])
 
     function getAuthors() {
-        $.get(SERVER_URL + "/authors",
+        $.get( AUTHOR_URL,
             (result) => {
                 setAuthors(result)
             }

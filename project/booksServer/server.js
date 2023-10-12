@@ -20,6 +20,7 @@ app.get("/books/search", handlers.searchBooks)
 app.get('/books/:id', handlers.getBookById)
 app.post('/books', handlers.addBook)
 app.put('/books/:id', handlers.updateBook)
+app.patch('/books/:id', handlers.updatePrice)
 app.delete('/books/:id', handlers.deleteBook)
 
 

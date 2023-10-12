@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function EditBook() {
     let { bookId } = useParams();
-    const [book, setBook] = useState({ title : "", author : "", price : ""})
+    const [book, setBook] = useState({ title: "", author: "", price: "" })
     let navigate = useNavigate()
 
     useEffect(() => {
@@ -35,9 +35,10 @@ export default function EditBook() {
         // make ajax request for post 
         $.ajax(
             {
-                url:`${BOOKS_URL}/${bookId}`,
+                url: `${BOOKS_URL}/${bookId}`,
                 method: 'put',
-                data: book,
+                data: JSON.stringify(book),
+                contentType: 'application/json; charset=utf-8',
                 success: function () {
                     alert("Book updated successfully!")
                 },
@@ -54,16 +55,20 @@ export default function EditBook() {
         <>
             <h2>Edit Book</h2>
             <form onSubmit={updateBook}>
-                Title <br />
-                <input type="text" value={book.title} required onChange={changeValue} name="title" />
-                <p></p>
+                <div className="form-group">
+                    <label for="txtTitle">Title </label>
+                    <input className="form-control" type="text" value={book.title} id="txtTitle" required onChange={changeValue} name="title" />
+                </div>
 
-                Author <br />
-                <input type="text" value={book.author} required onChange={changeValue} name="author" />
-                <p></p>
+                <div className="form-group">
+                    <label for="txtAuthor">Author</label>
+                    <input id="txtAuthor" className="form-control" type="text" value={book.author} required onChange={changeValue} name="author" />
+                </div>
 
-                Price <br />
-                <input type="number" value={book.price} onChange={changeValue} name="price" />
+                <div className="form-group">
+                    <label for="txtPrice">Price</label>
+                    <input id="txtPrice" className="form-control" type="number" value={book.price} onChange={changeValue} name="price" />
+                </div>
                 <p></p>
                 <button>Update Book</button>
                 &nbsp;

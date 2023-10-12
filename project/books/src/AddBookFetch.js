@@ -11,7 +11,7 @@ export default function AddBookFetch() {
 
     event.preventDefault()
 
-    // make ajax request for post 
+    // make ajax request for post using Fetch API 
     let response = await fetch(BOOKS_URL, {
       method: 'post',
       body: JSON.stringify(book),

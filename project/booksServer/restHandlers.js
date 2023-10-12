@@ -24,9 +24,9 @@ async function getBooksByAuthor(req, res) {
 async function getBookById(req,res) {
   try {
     let book = await db.getBookById(req.params.id)
-    if (book)
+    if (book)  // book id found 
       res.json(book)
-    else
+    else  // book id not found 
       res.status(404).send("Book Id Not Found!")
   }
   catch (err) {
@@ -37,7 +37,7 @@ async function getBookById(req,res) {
 async function searchBooks(req, res) {
   try {
     let books = await db.searchBooks(req.query.title)
-    console.log(books)
+    //console.log(books)
     res.json(books);
   }
   catch (err) {
@@ -48,7 +48,9 @@ async function searchBooks(req, res) {
 
 async function addBook(req, res) {
   try {
-    await db.addBook(req.body.title, req.body.author, req.body.price)
+    await db.addBook(req.body.title, 
+                     req.body.author, 
+                     req.body.price)
     res.status(201).send("Book Added!")
   }
   catch (err) {
@@ -93,6 +95,16 @@ async function getAuthorsBooksCount(req, res) {
 }
 
 
+async function updatePrice(req, res) {
+  try {
+    res.status(200).send("")
+  }
+  catch (err) {
+    res.status(500).send("Error : " + err.message)
+  }
+}
+
+
 module.exports = {
   getBooks,
   getBookById,
@@ -101,6 +113,7 @@ module.exports = {
   deleteBook,
   searchBooks,
   getAuthorsBooksCount,
-  getBooksByAuthor
+  getBooksByAuthor,
+  updatePrice
 }
  

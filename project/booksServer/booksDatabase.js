@@ -23,7 +23,7 @@ async function getBookById(id) {
     if (rows.length > 0)
         return rows[0]
     else
-        return null;  // Indicates book not found 
+        return null;  // Indicates book id not found 
 }
 
 async function searchBooks(title) {
@@ -38,8 +38,9 @@ async function addBook(title, author, price) {
 }
 
 async function updateBook(id, book) {
-    let [result, fields] =  await pool.query("update books set title = ?, author = ?, price = ? where id = ?", [book.title, book.author, book.price, id])
-    console.log(result)
+    let [result, fields] =  await pool.query("update books set title = ?, author = ?, price = ? where id = ?", 
+                                    [book.title, book.author, book.price, id])
+    //console.log(result)
     if (result.affectedRows === 1)
         return true
     else
