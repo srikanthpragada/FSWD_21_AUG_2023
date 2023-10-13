@@ -10,7 +10,7 @@ export default function ListBooksByAuthor() {
     useEffect(() => getBooksByAuthor())
 
     function getBooksByAuthor() {
-        $.get(BOOKS_URL + "/author?author=" + author,
+        $.get(BOOKS_URL + `/author?author=${author}`,
             (result) => {
                 setBooks(result)
             }

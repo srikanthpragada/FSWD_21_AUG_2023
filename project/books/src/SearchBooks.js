@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import $ from 'jquery'
-import { BOOKS_URL} from './constants'
+import {SEARCH_URL} from './constants'
 
 export default function SearchBooks() {
     const [selectedBooks, setSelectedBooks] = useState([])
@@ -8,7 +8,7 @@ export default function SearchBooks() {
     const [done, setDone] = useState(false)
 
     function searchBooks() {
-        $.get(BOOKS_URL + `/search?title=${searchText}`,
+        $.get(SEARCH_URL + `?title=${searchText}`,
             (result) => {
                 setSelectedBooks(result)
                 setDone(true)
